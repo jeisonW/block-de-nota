@@ -7,7 +7,7 @@
 <!-- centere heroe de bootstrap examples-->
 <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold text-body-emphasis">Block notas</h1>
-    <div class="col-lg-6 mx-auto">
+    <div class="col-lg-8 mx-auto">
         <table class="table">
             <thead>
               <tr>
@@ -22,11 +22,12 @@
                 {% for row in notas %}
               <tr>
                 <th scope="row">{{row.id_notas }}</th>
-                <td>{{ row.nota }}</td>
+                <!-- Esa clase text break es para que no se extienda el ancho de la tabla -->
+                <td class="text-break">{{ row.nota }}</td> 
                 <td>
                     <form action="/delete" method="post">
                         <input type="hidden" name="id" value="{{ row.id_notas}}">
-                        <button type="submit" class="form-control" vali> Delete</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                 </td>
                 <td></td>
@@ -68,7 +69,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
         </div>
       </div>
     </div>
